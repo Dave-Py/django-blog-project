@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- برای آیکون ها -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            color: #2C3E50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .post-meta {
+            text-align: center;
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .post-meta i {
+            margin-right: 5px;
+        }
+
+        .post-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link i {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="post-title">{{ post.title }}</h1>
+        
+        <div class="post-meta">
+            <p><i class="fas fa-calendar-alt"></i> {{ post.cteated_date|date:"d M Y" }} | <i class="fas fa-user"></i> {{ post.auther }}</p>
+        </div>
+
+        <div class="post-content">
+            <p>{{ post.context }}</p>
+        </div>
+
+        <a href="{% url 'blog_list' %}" class="back-link">
+            بازگشت به لیست پست‌ها <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+
+</body>
+</html>

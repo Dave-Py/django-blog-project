@@ -197,12 +197,15 @@
         <!-- بخش بلاگ -->
         <section id="blog" class="blog-section">
             <h2> BLOG POSTS</h2>
-            
+            {% for post in posts %}
+
             <div class="blog-post">
-                <h3>پست اول</h3>
-                <p>این اولین پست بلاگ است که موضوعات جالبی را پوشش می‌دهد.</p>
-                <a href="#post1">ادامه مطلب</a>
+                <h2> {{post.title}} </h2>
+                <p>{{post.context | truncatechars:100}}</p>
+                <a href={% url 'post_detail' post.id %}>more. . .  </a>
             
+            {% endfor %}
+
             </div>
         </section>
     </div>
