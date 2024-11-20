@@ -4,8 +4,8 @@ from django.db import models
 class User(models.Model):
     name = models.CharField(max_length=150)
     email = models.EmailField(max_length=254)
-    birth_date = models.DateField(null = Ture , blank = True)
-    password = modesl.CharField(max_length=50)
+    birth_date = models.DateField(null = True , blank = True)
+    password = models.CharField(max_length=50)
 
 class Post(models.Model):
     title = models.CharField(max_length=250)
