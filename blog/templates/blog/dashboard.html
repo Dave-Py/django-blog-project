@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داشبورد</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2C3E50;
+        }
+        .welcome-message {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #333;
+        }
+        .logout-button {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .logout-button:hover {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>داشبورد کاربری</h2>
+        <p class="welcome-message">خوش آمدید، {{ user.username }}!</p>
+        <a href="{% url 'logout' %}" class="logout-button">خروج از حساب کاربری</a>
+    </div>
+</body>
+</html>
